@@ -636,15 +636,272 @@
     }
     .footer-links a:hover { color: var(--accent); }
 
+    /* ── HERO PHOTO ── */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-photo-frame {
+      position: relative;
+      width: 360px;
+      height: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .hero-photo-badge {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-photo-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    }
+    .hero-photo-badge span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .hero-photo-corner {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 80px;
+      height: 80px;
+      border-top: 2px solid var(--accent);
+      border-right: 2px solid var(--accent);
+      border-radius: 0 12px 0 0;
+      opacity: 0.5;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg-2); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .project-card {
+      background: var(--bg-2);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.2s;
+      cursor: default;
+    }
+    .project-card:hover { background: var(--surface); }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .project-outcome {
+      background: rgba(255,61,46,0.08);
+      border: 1px solid rgba(255,61,46,0.2);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .project-outcome-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .project-outcome-value {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {}
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: border-color 0.2s;
+    }
+    .testimonial-card:hover { border-color: rgba(255,61,46,0.3); }
+    .testimonial-quote {
+      font-size: 32px;
+      color: var(--accent);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .testimonial-text strong { color: var(--text); }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid rgba(255,61,46,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* ── SETUP / TOOLS ── */
+    #setup { background: var(--bg-2); }
+    .setup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .setup-category {
+      background: var(--bg-2);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+    .setup-category:hover { background: var(--surface); }
+    .setup-category-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--sand);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 20px;
+    }
+    .setup-tool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .setup-tool {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .setup-tool-icon {
+      font-size: 18px;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .setup-tool-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .setup-tool-desc {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 1px;
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
       #hero { padding: 120px 20px 60px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hero-photo-frame { width: 100%; height: 300px; }
       .hero-stats { gap: 32px; flex-wrap: wrap; }
       section { padding: 72px 20px; }
       #story .two-col { grid-template-columns: 1fr; gap: 48px; }
       .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .setup-grid { grid-template-columns: 1fr 1fr; }
       .numbers-grid { grid-template-columns: 1fr 1fr; }
       .exp-item { grid-template-columns: 1fr; gap: 16px; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -673,6 +930,8 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#numbers">Numbers</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#setup">Stack</a></li>
   </ul>
   <a href="mailto:towhozib223@gmail.com" class="nav-cta">Get in Touch</a>
 </nav>
@@ -681,49 +940,62 @@
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Head of Operations · The Implant Engine</div>
-    <h1>I build systems<br>that <span class="accent">scale</span><br><span class="dim">businesses.</span></h1>
-    <div class="hero-terminal">
-      <span class="prompt">$</span>
-      <span id="typed-text"></span>
-      <span class="cursor"></span>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Head of Operations · The Implant Engine</div>
+      <h1>I build systems<br>that <span class="accent">scale</span><br><span class="dim">businesses.</span></h1>
+      <div class="hero-terminal">
+        <span class="prompt">$</span>
+        <span id="typed-text"></span>
+        <span class="cursor"></span>
+      </div>
+      <p class="hero-desc">
+        Started as a front-end developer. Built <strong>700+ websites</strong>. Then moved into ops.
+        Now I run full-stack operations at a US dental marketing agency —
+        <strong>GHL automations, CRM architecture, team systems, and everything in between.</strong>
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:towhozib223@gmail.com" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/tomal223" target="_blank" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.fiverr.com/hire_devs" target="_blank" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Fiverr
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">700<span>+</span></div>
+          <div class="stat-label">Websites Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">150<span>+</span></div>
+          <div class="stat-label">Active Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5<span>yr</span></div>
+          <div class="stat-label">In Ops & Dev</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">GHL</div>
+          <div class="stat-label">Expert · CRM Architect</div>
+        </div>
+      </div>
     </div>
-    <p class="hero-desc">
-      Started as a front-end developer. Built <strong>700+ websites</strong>. Then moved into ops.
-      Now I run full-stack operations at a US dental marketing agency —
-      <strong>GHL automations, CRM architecture, team systems, and everything in between.</strong>
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:towhozib223@gmail.com" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email Me
-      </a>
-      <a href="https://www.linkedin.com/in/tomal223" target="_blank" class="btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://www.fiverr.com/hire_devs" target="_blank" class="btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        Fiverr
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number">700<span>+</span></div>
-        <div class="stat-label">Websites Built</div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <!-- Replace "your-photo.jpg" with your actual image filename once you drop it in the project folder -->
+        <img src="your-photo.jpg" alt="Tawzib Ahmed Tomal" onerror="this.style.display='none';this.parentElement.style.background='var(--surface)';" />
       </div>
-      <div class="stat-item">
-        <div class="stat-number">150<span>+</span></div>
-        <div class="stat-label">Active Clients</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5<span>yr</span></div>
-        <div class="stat-label">In Ops & Dev</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">GHL</div>
-        <div class="stat-label">Expert · CRM Architect</div>
+      <div class="hero-photo-corner"></div>
+      <div class="hero-photo-badge">
+        <div class="hero-photo-badge-dot"></div>
+        <span>Available for new projects</span>
       </div>
     </div>
   </div>
@@ -970,6 +1242,253 @@
         <div class="number-label">Industry Experience</div>
         <div class="number-sub">Dev + Ops Combined</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-eyebrow">Selected Work</div>
+    <h2>Problems solved.<br>Results shipped.</h2>
+    <p class="section-lead">Not just deliverables — outcomes. Each of these started with a broken process or a missing system, and ended with something that actually ran.</p>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card">
+        <div class="project-tag">GHL · Automation</div>
+        <h3>Full-Funnel Implant Booking System</h3>
+        <p>Designed and built a 14-step GoHighLevel automation sequence for a high-volume dental implant practice — covering lead capture, SMS follow-up, appointment confirmation, and post-visit reactivation. Replaced a manual intake process that was leaking 60% of inbound leads before first contact.</p>
+        <div class="project-outcome">
+          <div class="project-outcome-label">Outcome</div>
+          <div class="project-outcome-value">3× more consultations booked within 45 days</div>
+        </div>
+        <div class="project-tools">
+          <span class="chip">GoHighLevel</span><span class="chip">SMS Automation</span><span class="chip">CRM Pipelines</span><span class="chip">A2P Compliance</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Ops · Systems</div>
+        <h3>Agency-Wide Operations Rebuild</h3>
+        <p>When I stepped into the Head of Operations role, client delivery was siloed, accountability was unclear, and onboarding took 3+ weeks per account. I rebuilt the internal SOP library, restructured team workflows in Asana, and standardized GHL onboarding across all 150+ accounts — cutting average setup time in half.</p>
+        <div class="project-outcome">
+          <div class="project-outcome-label">Outcome</div>
+          <div class="project-outcome-value">Onboarding time cut from 3 weeks → 9 days</div>
+        </div>
+        <div class="project-tools">
+          <span class="chip">Asana</span><span class="chip">SOPs</span><span class="chip">GHL</span><span class="chip">Team Ops</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Dev · Front-End</div>
+        <h3>100+ Dental Landing Pages at Scale</h3>
+        <p>Built a modular HTML/CSS component system that let the team ship new client landing pages in hours instead of days. Every page was mobile-first, integrated with GHL for form capture and booking, and structured for local SEO. The system is still the foundation of the agency's web delivery today.</p>
+        <div class="project-outcome">
+          <div class="project-outcome-label">Outcome</div>
+          <div class="project-outcome-value">100+ pages shipped · avg. delivery under 48h</div>
+        </div>
+        <div class="project-tools">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">GHL Funnels</span><span class="chip">Figma</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-eyebrow">What People Say</div>
+    <h2>Heard from the<br>people I've worked with.</h2>
+    <p class="section-lead">I let the work speak. But occasionally, the people behind the work do too.</p>
+    <div class="testimonials-grid fade-up">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Tomal didn't just build our GHL setup — he <strong>redesigned how we think about operations</strong>. Before him, our onboarding was chaos. Now it runs itself. He's the kind of person you don't realize you needed until everything is just... working.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JM</div>
+          <div>
+            <div class="testimonial-name">James M.</div>
+            <div class="testimonial-role">Founder · Dental Marketing Agency, US</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Working with Tomal is like having a <strong>technical co-founder and an ops director in one person</strong>. He understands the code, he understands the business logic, and he executes fast. We went from 3-week client launches to 9-day launches because of him.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SR</div>
+          <div>
+            <div class="testimonial-name">Sarah R.</div>
+            <div class="testimonial-role">VP of Client Success · The Implant Engine</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">I hired Tomal on Fiverr for a landing page and ended up <strong>bringing him back for three more projects</strong>. Every time: clean code, pixel-perfect output, delivered ahead of deadline. He's the rare dev who actually reads the brief.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DK</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-role">Startup Founder · London, UK</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SETUP -->
+<section id="setup">
+  <div class="section-inner">
+    <div class="section-eyebrow">My Stack</div>
+    <h2>The tools I actually<br>use every day.</h2>
+    <p class="section-lead">No fluff. This is what's open on my screen when I'm building, managing, and shipping — across ops, development, and automation.</p>
+    <div class="setup-grid fade-up">
+
+      <div class="setup-category">
+        <div class="setup-category-label">Ops & CRM</div>
+        <div class="setup-tool-list">
+          <div class="setup-tool">
+            <div class="setup-tool-icon">⚡</div>
+            <div>
+              <div class="setup-tool-name">GoHighLevel</div>
+              <div class="setup-tool-desc">CRM, automations, funnels</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">📋</div>
+            <div>
+              <div class="setup-tool-name">Asana</div>
+              <div class="setup-tool-desc">Project & team management</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">💬</div>
+            <div>
+              <div class="setup-tool-name">Slack</div>
+              <div class="setup-tool-desc">Team comms & async ops</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">📊</div>
+            <div>
+              <div class="setup-tool-name">Google Workspace</div>
+              <div class="setup-tool-desc">Docs, Sheets, reporting</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-category">
+        <div class="setup-category-label">Dev & Code</div>
+        <div class="setup-tool-list">
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🖥️</div>
+            <div>
+              <div class="setup-tool-name">VS Code</div>
+              <div class="setup-tool-desc">Primary editor</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🎨</div>
+            <div>
+              <div class="setup-tool-name">Figma</div>
+              <div class="setup-tool-desc">UI design & handoff</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🌐</div>
+            <div>
+              <div class="setup-tool-name">Cloudflare</div>
+              <div class="setup-tool-desc">DNS, caching, security</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🐙</div>
+            <div>
+              <div class="setup-tool-name">GitHub</div>
+              <div class="setup-tool-desc">Version control & deploy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-category">
+        <div class="setup-category-label">AI & Automation</div>
+        <div class="setup-tool-list">
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🤖</div>
+            <div>
+              <div class="setup-tool-name">Claude</div>
+              <div class="setup-tool-desc">AI ops & code assistant</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🔁</div>
+            <div>
+              <div class="setup-tool-name">GHL Workflows</div>
+              <div class="setup-tool-desc">Business automation engine</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">📨</div>
+            <div>
+              <div class="setup-tool-name">Mailgun / SMTP</div>
+              <div class="setup-tool-desc">Email deliverability</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🔗</div>
+            <div>
+              <div class="setup-tool-name">Zapier / Make</div>
+              <div class="setup-tool-desc">Cross-platform automation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-category">
+        <div class="setup-category-label">Hardware & Setup</div>
+        <div class="setup-tool-list">
+          <div class="setup-tool">
+            <div class="setup-tool-icon">💻</div>
+            <div>
+              <div class="setup-tool-name">Windows PC</div>
+              <div class="setup-tool-desc">Custom build, dual monitor</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🌍</div>
+            <div>
+              <div class="setup-tool-name">Remote-First</div>
+              <div class="setup-tool-desc">US timezone overlap</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">📍</div>
+            <div>
+              <div class="setup-tool-name">Dhaka, Bangladesh</div>
+              <div class="setup-tool-desc">GMT+6 · Async-friendly</div>
+            </div>
+          </div>
+          <div class="setup-tool">
+            <div class="setup-tool-icon">🔒</div>
+            <div>
+              <div class="setup-tool-name">1Password</div>
+              <div class="setup-tool-desc">Credential & access mgmt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
