@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tawzib Ahmed Tomal — Head of Operations & GHL Expert</title>
+  <meta name="description" content="I build systems that scale dental practices. Head of Operations at The Implant Engine — GoHighLevel expert, front-end developer, and automation architect." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0d0b;
+      --bg-2: #1a1815;
+      --bg-3: rgb(26,24,21);
+      --surface: rgb(42,39,34);
+      --border: rgb(42,39,34);
+      --border-light: rgb(107,102,92);
+      --text: #f3eee5;
+      --text-warm: #ebe4d6;
+      --text-muted: rgb(181,173,157);
+      --text-dim: #6b665c;
+      --accent: #ff3d2e;
+      --accent-dark: #c4291c;
+      --accent-dim: rgba(255,61,46,0.12);
+      --accent-glow: rgba(255,61,46,0.22);
+      --yellow: #f4e87a;
+      --sand: #d6cebd;
+      --sand-dark: rgb(217,210,194);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(14,13,11,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-logo:hover span { color: var(--accent-dark); }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: #f3eee5;
+      background: var(--accent);
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(107,102,92,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107,102,92,0.18) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 1;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,61,46,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--sand);
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--sand);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -2.5px;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+    h1 .accent { color: var(--accent); }
+    h1 .dim { color: var(--text-dim); }
+    .hero-terminal {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 24px;
+    }
+    .hero-terminal .prompt { color: var(--yellow); }
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 18px;
+      background: var(--yellow);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .hero-desc {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 52px;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 600; }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #f3eee5;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats {
+      display: flex;
+      gap: 56px;
+      padding-top: 52px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .stat-number span { color: var(--accent); }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 6px;
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollDown 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 100px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--sand);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--sand);
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .section-lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 64px;
+    }
+    .section-lead strong { color: var(--text); }
+
+    /* ── STORY ── */
+    #story .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .story-text p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .story-text p strong { color: var(--text); font-weight: 600; }
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-warm);
+      background: rgba(214,206,189,0.08);
+      border: 1px solid rgba(214,206,189,0.2);
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+    .story-sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .sidebar-card:hover { border-color: var(--accent); }
+    .sidebar-card-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .sidebar-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .sidebar-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg-2); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .skill-cell {
+      background: var(--bg-2);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .skill-cell:hover { background: var(--surface); }
+    .skill-cell-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255,61,46,0.1);
+      border: 1px solid rgba(255,61,46,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+    .skill-cell h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .skill-cell p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 2px; }
+    .exp-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      transition: border-color 0.2s;
+      cursor: default;
+    }
+    .exp-item:hover { border-color: rgba(255,61,46,0.3); }
+    .exp-meta {}
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--sand);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .exp-company {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .exp-location {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .exp-content {}
+    .exp-role {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .exp-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .exp-bullets li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .exp-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── NUMBERS ── */
+    #numbers { background: var(--bg-2); }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .number-card {
+      background: var(--bg-2);
+      padding: 48px 36px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .number-card:hover { background: var(--surface); }
+    .number-big {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .number-big span { color: var(--accent); }
+    .number-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .number-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    /* ── CONTACT / CTA ── */
+    #contact { background: var(--bg-2); border-bottom: none; }
+    .cta-block {
+      max-width: 700px;
+    }
+    .cta-block h2 { margin-bottom: 20px; }
+    .cta-block p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .cta-block p strong { color: var(--text); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-card-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255,61,46,0.1);
+      border: 1px solid rgba(255,61,46,0.25);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-card-label {
+      font-size: 12px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 3px;
+    }
+    .contact-card-value {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid var(--border);
+    }
+    footer .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    footer .logo span { color: var(--accent); }
+    footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      #hero { padding: 120px 20px 60px; }
+      .hero-stats { gap: 32px; flex-wrap: wrap; }
+      section { padding: 72px 20px; }
+      #story .two-col { grid-template-columns: 1fr; gap: 48px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Tomal<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#numbers">Numbers</a></li>
+  </ul>
+  <a href="mailto:towhozib223@gmail.com" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Head of Operations · The Implant Engine</div>
+    <h1>I build systems<br>that <span class="accent">scale</span><br><span class="dim">businesses.</span></h1>
+    <div class="hero-terminal">
+      <span class="prompt">$</span>
+      <span id="typed-text"></span>
+      <span class="cursor"></span>
+    </div>
+    <p class="hero-desc">
+      Started as a front-end developer. Built <strong>700+ websites</strong>. Then moved into ops.
+      Now I run full-stack operations at a US dental marketing agency —
+      <strong>GHL automations, CRM architecture, team systems, and everything in between.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:towhozib223@gmail.com" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Me
+      </a>
+      <a href="https://www.linkedin.com/in/tomal223" target="_blank" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://www.fiverr.com/hire_devs" target="_blank" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Fiverr
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">700<span>+</span></div>
+        <div class="stat-label">Websites Built</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">150<span>+</span></div>
+        <div class="stat-label">Active Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5<span>yr</span></div>
+        <div class="stat-label">In Ops & Dev</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">GHL</div>
+        <div class="stat-label">Expert · CRM Architect</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Story</div>
+    <h2>From pixels<br>to processes.</h2>
+    <div class="two-col">
+      <div class="story-text">
+        <p>I didn't start in operations. I started with a code editor and a blank screen. Over nearly three years at JamesCoders, I designed and built <strong>200+ responsive websites</strong> — HTML, CSS, SCSS, JavaScript — obsessing over the details that most people skip.</p>
+        <p>Then came the realization that the best product means nothing if the system behind it doesn't hold. So I moved into ops. And it turns out that building systems for businesses isn't so different from building interfaces — you're still thinking in structures, dependencies, and failure states.</p>
+        <p>Today I lead operations at <strong>The Implant Engine</strong>, a US-based dental marketing agency. I manage 150+ active client accounts, a cross-functional remote team, and the entire GoHighLevel infrastructure — from CRM pipelines and automation workflows to DNS management and A2P compliance. The technical foundation makes me a better ops lead. The ops mindset makes me a sharper technologist.</p>
+        <p>I live at the intersection of both. Where most people see a bottleneck, I see a workflow waiting to be designed.</p>
+        <div class="story-tags">
+          <span class="tag">GoHighLevel Expert</span>
+          <span class="tag">CRM Architecture</span>
+          <span class="tag">Workflow Automation</span>
+          <span class="tag">Team Ops</span>
+          <span class="tag">Front-End Dev</span>
+          <span class="tag">Funnel Builder</span>
+          <span class="tag">A2P Compliance</span>
+          <span class="tag">DNS Management</span>
+        </div>
+      </div>
+      <div class="story-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-card-icon">⚙️</div>
+          <h4>Systems Thinker</h4>
+          <p>Every problem is a process waiting to be mapped. I design workflows that eliminate chaos — not patch it.</p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-icon">🔧</div>
+          <h4>Technically Grounded</h4>
+          <p>I can write the code, configure the DNS, build the funnel, and explain all three to any audience. Ops without technical depth is just guesswork.</p>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-icon">📍</div>
+          <h4>Based in Dhaka, Bangladesh</h4>
+          <p>Operating across US time zones, managing distributed teams, and delivering for a global client base — remotely and reliably.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-eyebrow">What I Do</div>
+    <h2>Tech meets ops.<br>At every layer.</h2>
+    <p class="section-lead">Not a generalist who dabbles. A specialist who operates at both ends — deep enough in the tech to build it, broad enough in ops to manage it at scale.</p>
+    <div class="skills-grid fade-up">
+      <div class="skill-cell">
+        <div class="skill-cell-icon">⚡</div>
+        <h3>GHL Operations</h3>
+        <p>Full-stack GoHighLevel management across 150+ sub-accounts. From initial setup to ongoing automation architecture.</p>
+        <div class="skill-chips">
+          <span class="chip">CRM Pipelines</span>
+          <span class="chip">Automations</span>
+          <span class="chip">Funnels</span>
+          <span class="chip">Sub-Accounts</span>
+          <span class="chip">A2P Compliance</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🔁</div>
+        <h3>Workflow Automation</h3>
+        <p>Designing and maintaining automated systems that reduce human error, speed up delivery, and scale without breaking.</p>
+        <div class="skill-chips">
+          <span class="chip">GHL Workflows</span>
+          <span class="chip">Notifications</span>
+          <span class="chip">Booking Logic</span>
+          <span class="chip">SOPs</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🌐</div>
+        <h3>Front-End Development</h3>
+        <p>Building clean, performant, mobile-first web experiences. 700+ sites delivered across clients and industries.</p>
+        <div class="skill-chips">
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3 / SCSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Tailwind</span>
+          <span class="chip">Figma</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">📋</div>
+        <h3>Team & Project Ops</h3>
+        <p>Managing cross-functional remote teams, KPI tracking, and performance systems that keep 150+ accounts running on time.</p>
+        <div class="skill-chips">
+          <span class="chip">Asana</span>
+          <span class="chip">Slack</span>
+          <span class="chip">KPI Frameworks</span>
+          <span class="chip">SOPs</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🔒</div>
+        <h3>DNS & Deliverability</h3>
+        <p>Managing domain configurations, Cloudflare setups, email deliverability, and technical onboarding for client accounts.</p>
+        <div class="skill-chips">
+          <span class="chip">DNS Management</span>
+          <span class="chip">Cloudflare</span>
+          <span class="chip">GoDaddy</span>
+          <span class="chip">Email Auth</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🤖</div>
+        <h3>AI & Automations</h3>
+        <p>Integrating AI tools into operational workflows — from Claude-powered automation to research agents and client delivery systems.</p>
+        <div class="skill-chips">
+          <span class="chip">Claude / Anthropic</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">AI Workflows</span>
+          <span class="chip">Tooling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-eyebrow">Experience</div>
+    <h2>Where I've built<br>and what I've shipped.</h2>
+    <p class="section-lead">Five years across freelance, agency, and in-house roles — consistently at the edge of technical and operational work.</p>
+    <div class="exp-list">
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Jun 2025 — Present</div>
+          <div class="exp-company">The Implant Engine</div>
+          <div class="exp-location">Portland, OR (Remote)</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Head of Operations</div>
+          <p class="exp-desc">Leading end-to-end operations for a dental marketing agency — overseeing systems, timelines, and cross-functional workflows for 150+ active dental clients. First point of accountability for platform health, team delivery, and client success execution.</p>
+          <ul class="exp-bullets">
+            <li>Built and maintain 150+ GoHighLevel automation funnels, CRM pipelines, and appointment booking workflows</li>
+            <li>Oversee CRM hygiene, automated notifications, and performance tracking across all client accounts</li>
+            <li>Coordinate marketing, development, and client success teams for smooth execution and accountability</li>
+            <li>Created and refined internal SOPs and process documentation to support operational efficiency at scale</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="chip">GoHighLevel</span><span class="chip">Claude</span><span class="chip">Asana</span><span class="chip">Slack</span><span class="chip">CRM Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Sep 2023 — Present</div>
+          <div class="exp-company">The Implant Engine</div>
+          <div class="exp-location">Portland, OR (Remote)</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Website Developer</div>
+          <p class="exp-desc">Delivered 100+ dental landing pages built for conversion — integrated directly with GHL CRM and appointment booking systems. Every page mobile-first, SEO-ready, and campaign-aligned.</p>
+          <ul class="exp-bullets">
+            <li>Built 100+ landing pages using HTML5, CSS3, and JavaScript, optimized for speed, SEO, and conversion</li>
+            <li>Integrated all pages with GoHighLevel CRM, funnel logic, and appointment booking flows</li>
+            <li>Maintained consistent mobile-first responsive design standards across all client properties</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">GHL Funnels</span><span class="chip">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Jan 2021 — Sep 2023</div>
+          <div class="exp-company">JamesCoders</div>
+          <div class="exp-location">Dhaka, Bangladesh</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Front-End Web Designer</div>
+          <p class="exp-desc">Delivered front-end web design and development for a diverse range of clients. Obsessive about clean code, pixel-perfect output, and cross-browser reliability. Built the reusable systems that made the team faster.</p>
+          <ul class="exp-bullets">
+            <li>Designed and built 200+ responsive websites from scratch using HTML5, CSS3, JavaScript, and SCSS</li>
+            <li>Reduced design-to-development handoff time by standardizing reusable CSS component libraries</li>
+            <li>Managed multiple client projects simultaneously while maintaining quality across all deliverables</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">SCSS</span><span class="chip">TailwindCSS</span><span class="chip">Bootstrap</span><span class="chip">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Feb 2020 — Jun 2021</div>
+          <div class="exp-company">Fiverr</div>
+          <div class="exp-location">Kushtia, Bangladesh</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Frontend Web Developer</div>
+          <p class="exp-desc">Freelance client work across industries — where every project taught a new constraint and sharpened the fundamentals. Started here. Learned how to deliver under pressure, communicate with international clients, and turn feedback into shipped product.</p>
+          <div class="exp-tools">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Freelance</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers">
+  <div class="section-inner">
+    <div class="section-eyebrow">By The Numbers</div>
+    <h2>Scale isn't claimed.<br>It's counted.</h2>
+    <p class="section-lead">A few of the numbers behind the work.</p>
+    <div class="numbers-grid fade-up">
+      <div class="number-card">
+        <div class="number-big">700<span>+</span></div>
+        <div class="number-label">Websites Built</div>
+        <div class="number-sub">HTML · CSS · JS · GHL</div>
+      </div>
+      <div class="number-card">
+        <div class="number-big">150<span>+</span></div>
+        <div class="number-label">Active Client Accounts</div>
+        <div class="number-sub">Dental Marketing</div>
+      </div>
+      <div class="number-card">
+        <div class="number-big">150<span>+</span></div>
+        <div class="number-label">GHL Automation Funnels</div>
+        <div class="number-sub">Built & Maintained</div>
+      </div>
+      <div class="number-card">
+        <div class="number-big">5<span>yr</span></div>
+        <div class="number-label">Industry Experience</div>
+        <div class="number-sub">Dev + Ops Combined</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="cta-block">
+      <div class="section-eyebrow">Let's Talk</div>
+      <h2>If you're building<br>something, reach out.</h2>
+      <p>I work best with teams and founders who need someone who can <strong>operate at both the technical and operational level</strong> — without having to translate between the two. Whether it's GHL architecture, ops systems, or front-end work, I'm open to the conversation.</p>
+      <div class="hero-actions">
+        <a href="mailto:towhozib223@gmail.com" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          towhozib223@gmail.com
+        </a>
+        <a href="https://www.tomal.dev" target="_blank" class="btn-secondary">tomal.dev</a>
+      </div>
+    </div>
+    <div class="contact-grid fade-up">
+      <a href="https://www.linkedin.com/in/tomal223" target="_blank" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3d2e" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">linkedin.com/in/tomal223</div>
+        </div>
+      </a>
+      <a href="https://www.fiverr.com/hire_devs" target="_blank" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3d2e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Fiverr</div>
+          <div class="contact-card-value">fiverr.com/hire_devs</div>
+        </div>
+      </a>
+      <a href="https://www.tomal.dev" target="_blank" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3d2e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Website</div>
+          <div class="contact-card-value">tomal.dev</div>
+        </div>
+      </a>
+      <a href="mailto:towhozib223@gmail.com" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3d2e" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">towhozib223@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo">Tomal<span>.</span></a>
+  <p>© 2026 Tawzib Ahmed Tomal · Head of Operations & GHL Expert</p>
+  <ul class="footer-links">
+    <li><a href="https://www.linkedin.com/in/tomal223" target="_blank">LinkedIn</a></li>
+    <li><a href="https://www.fiverr.com/hire_devs" target="_blank">Fiverr</a></li>
+    <li><a href="mailto:towhozib223@gmail.com">Email</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Terminal typewriter
+  const lines = [
+    'GHL automation architect',
+    'operations lead · 150+ clients',
+    'front-end developer · 700+ sites',
+    'building systems that scale.'
+  ];
+  let lineIndex = 0, charIndex = 0, deleting = false;
+  const el = document.getElementById('typed-text');
+  function type() {
+    const current = lines[lineIndex];
+    if (!deleting) {
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(type, 1800);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        deleting = false;
+        lineIndex = (lineIndex + 1) % lines.length;
+      }
+    }
+    setTimeout(type, deleting ? 40 : 65);
+  }
+  type();
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Animated counters
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1800;
+    const startTime = performance.now();
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  const numObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        numObserver.unobserve(e.target);
+        const big = e.target.querySelectorAll('.number-big');
+        const targets = [700, 150, 150, 5];
+        const suffixes = ['+', '+', '+', 'yr'];
+        big.forEach((el, i) => {
+          const span = el.querySelector('span');
+          const spanContent = span ? span.outerHTML : '';
+          el.innerHTML = '';
+          el.insertAdjacentHTML('beforeend', spanContent);
+          animateCounter({ set textContent(v) { el.childNodes[0] ? el.childNodes[0].textContent = v : el.insertAdjacentText('afterbegin', v); el.querySelector('span').outerHTML = spanContent; } }, targets[i], suffixes[i]);
+          let start = 0;
+          const duration = 1600;
+          const startTime = performance.now();
+          const suffix = suffixes[i];
+          function update(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const val = Math.floor(eased * targets[i]);
+            el.innerHTML = val + `<span>${suffix}</span>`;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.numbers-grid').forEach(el => numObserver.observe(el));
+</script>
+</body>
+</html>
