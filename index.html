@@ -1600,47 +1600,25 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   // Animated counters
-  function animateCounter(el, target, suffix = '') {
-    let start = 0;
-    const duration = 1800;
-    const startTime = performance.now();
-    function update(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target) + suffix;
-      if (progress < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-  }
   const numObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        numObserver.unobserve(e.target);
-        const big = e.target.querySelectorAll('.number-big');
-        const targets = [700, 150, 150, 5];
-        const suffixes = ['+', '+', '+', 'yr'];
-        big.forEach((el, i) => {
-          const span = el.querySelector('span');
-          const spanContent = span ? span.outerHTML : '';
-          el.innerHTML = '';
-          el.insertAdjacentHTML('beforeend', spanContent);
-          animateCounter({ set textContent(v) { el.childNodes[0] ? el.childNodes[0].textContent = v : el.insertAdjacentText('afterbegin', v); el.querySelector('span').outerHTML = spanContent; } }, targets[i], suffixes[i]);
-          let start = 0;
-          const duration = 1600;
-          const startTime = performance.now();
-          const suffix = suffixes[i];
-          function update(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const val = Math.floor(eased * targets[i]);
-            el.innerHTML = val + `<span>${suffix}</span>`;
-            if (progress < 1) requestAnimationFrame(update);
-          }
-          requestAnimationFrame(update);
-        });
-      }
+      if (!e.isIntersecting) return;
+      numObserver.unobserve(e.target);
+      const targets = [700, 150, 150, 5];
+      const suffixes = ['+', '+', '+', 'yr'];
+      e.target.querySelectorAll('.number-big').forEach((el, i) => {
+        const duration = 1600;
+        const startTime = performance.now();
+        const target = targets[i];
+        const suffix = suffixes[i];
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.innerHTML = Math.floor(eased * target) + `<span>${suffix}</span>`;
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      });
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.numbers-grid').forEach(el => numObserver.observe(el));
